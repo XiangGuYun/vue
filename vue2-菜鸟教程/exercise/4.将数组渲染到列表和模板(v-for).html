@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <ol>
+        <li v-for="man in people">
+            {{man.name}}
+        </li>
+    </ol>
+    <ol>
+        <template v-for="man in people">
+            <li>{{man.name}}</li>
+            ===============
+        </template>
+    </ol>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            people:[
+                {name:"刘备"},
+                {name:"关羽"},
+                {name:"张飞"},
+            ]
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>计数器{{counter}}</p>
+    <button @click="counter++" style="font-size: medium">点我</button>
+</div>
+<script>
+    const vue = new Vue({
+        el:"#app",
+        data:{
+            counter:1
+        }
+    })
+    vue.$watch("counter", function (n, o) {
+        alert("监听到counter的值从"+o+"变成了"+n)
+    })
+</script>
+</body>
+</html>

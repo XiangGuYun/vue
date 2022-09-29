@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<div id="vue_det">
+    <!--  {{ }} 用于输出对象属性和函数返回值。  -->
+    <h1>site : {{site}}</h1>
+    <h1>url : {{name}}</h1>
+    <h1>{{details()}}</h1>
+</div>
+<script type="text/javascript">
+		var vm = new Vue({
+		    // 它是 DOM 元素中的 id，表示绑定id为vue_det的元素
+			el: '#vue_det',
+			// 在data中定义属性，有site，url，alexa三个属性
+			data: {
+				site: "vue2-菜鸟教程",
+				url: "www.runoob.com",
+				alexa: "10000",
+				name: "666"
+			},
+			// 在methods中定义方法，定义一个方法叫details
+			methods: {
+				details: function() {
+					return  this.site + " - 学的不仅是技术，更是梦想！";
+				}
+			}
+		})
+	</script>
+</body>
+</html>

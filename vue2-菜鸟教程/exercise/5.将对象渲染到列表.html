@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>以单个属性进行遍历</h1>
+    <ol>
+        <li v-for="p in liuBei">
+            {{p}}
+        </li>
+    </ol>
+    <h1>以键值对的形式进行遍历</h1>
+    <ol>
+        <li v-for="(v, k) in liuBei">
+            {{k}} => {{v}}
+        </li>
+    </ol>
+    <h1>以索引加键值对的形式进行遍历</h1>
+    <ol>
+        <li v-for="(v, k, i) in liuBei">
+            ({{i}}) => {{k}} => {{v}}
+        </li>
+    </ol>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            liuBei:{
+                name:"刘备",
+                zi:"玄德",
+                zhiYe:"君主",
+                guoJia:"蜀汉"
+            }
+        }
+    })
+</script>
+</body>
+</html>

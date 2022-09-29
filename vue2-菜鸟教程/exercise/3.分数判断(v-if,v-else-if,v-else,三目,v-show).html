@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    生成的随机数是{{number}}
+
+    <div v-if="number>90">优秀</div>
+    <div v-else-if="number>80">良好</div>
+    <div v-else-if="number>70">尚可</div>
+    <div v-else-if="number>60">及格</div>
+    <div v-else>不及格</div>
+
+    三目运算法：{{(number>60)?"及格了":"没及格"}}
+
+    <div v-show="number>60">6666666666666</div>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            number:Math.random()*100
+        }
+    })
+</script>
+</body>
+</html>
